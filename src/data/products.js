@@ -214,8 +214,7 @@ export const allProducts = [
     phase: "Single Phase",
     capacity: "6 Ton",
     countryOfOrigin: "China (Imported)",
-    isBestSeller: true,
-    bestSellerOrder: 1,
+    isBestSeller: false,
   },
 
   {
