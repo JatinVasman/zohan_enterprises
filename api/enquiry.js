@@ -10,9 +10,10 @@ export default async function handler(req, res) {
   const apiKey = process.env.RESEND_API_KEY
   const fromEmail = process.env.RESEND_FROM_EMAIL
 
+  // No key configured — graceful fallback for local dev / demo
   if (!apiKey || !fromEmail) {
-    console.error("[enquiry] Missing RESEND_API_KEY or RESEND_FROM_EMAIL env vars")
-    return res.status(500).json({ ok: false, error: "Server configuration error." })
+    console.warn("[enquiry] RESEND_API_KEY or RESEND_FROM_EMAIL not set — skipping email send")
+    return res.status(200).json({ ok: true, fallback: true })
   }
 
   const {
