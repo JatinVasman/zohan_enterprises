@@ -261,7 +261,7 @@ export default function Header() {
                 {company.name}
               </p>
               <p className="text-[10px] sm:text-[11px] text-[#0D5C3A] font-bold dark:text-emerald-400 leading-tight uppercase tracking-wider">
-                Industrial Machinery
+                Industrial wire harness machinery
               </p>
             </div>
           </a>

@@ -125,9 +125,11 @@ export default function Hero() {
               variants={fadeIn}
               className="font-display mt-5 text-4xl font-bold leading-[1.12] text-[#0F172A] dark:text-white lg:text-[3.25rem]"
             >
-              Precision{" "}
-              <span className="text-[#0D5C3A] dark:text-emerald-400">Wire Processing</span>{" "}
-              Machinery
+              Industrial wire cutting stripping{" "}
+              <span className="text-[#0D5C3A] dark:text-emerald-400">
+                crimping &amp; Shouldring’s
+              </span>{" "}
+              machinery
             </motion.h1>
 
             {/* Sub-description */}
