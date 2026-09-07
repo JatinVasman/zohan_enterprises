@@ -128,7 +128,7 @@ export default function Hero() {
               Industrial Wire Cutting Stripping{" "}
               <span className="text-[#0D5C3A] dark:text-emerald-400">
                 Crimping &amp; Soldering Machinery
-              </span>{" "}
+              </span>
             </motion.h1>
 
             {/* Sub-description */}
