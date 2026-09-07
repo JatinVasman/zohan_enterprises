@@ -7,7 +7,7 @@ export const company = {
   address: "A-279, Sector 69, Transport Nagar, Noida, Uttar Pradesh - 201301, India",
   phone: "+91-9220725765",
   whatsapp: "919220725765",
-  email: "info@zohanenterprise.com",
+  email: "zohanenterprises58@gmail.com",
   gstNo: "09AFKPA1191F1ZP",
   iec: "AFKPA1191F",
   rating: 4.3,

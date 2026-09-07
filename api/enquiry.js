@@ -1,6 +1,6 @@
 import { Resend } from "resend"
 
-const COMPANY_EMAIL = "info@zohanenterprise.com"
+const COMPANY_EMAIL = "zohanenterprises58@gmail.com"
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -129,7 +129,7 @@ function buildHtml({ name, phone, email, company, message, productName, productP
         <!-- Footer -->
         <tr>
           <td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 32px;text-align:center;">
-            <p style="margin:0;font-size:11px;color:#94a3b8;">Zohan Enterprises · A-279, Sector 69, Noida, UP 201301 · info@zohanenterprise.com</p>
+            <p style="margin:0;font-size:11px;color:#94a3b8;">Zohan Enterprises · A-279, Sector 69, Noida, UP 201301 · zohanenterprises58@gmail.com</p>
           </td>
         </tr>
 
