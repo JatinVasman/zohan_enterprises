@@ -11,58 +11,58 @@ import { company } from "../data/content"
 // ─── Flagship products for hero carousel ───────────────────────────────────
 const HERO_PRODUCTS = [
   {
-    slug:     "ze-2t-semi-automatic-side-panel-crimping-machine",
-    series:   "ZE-2T Series",
-    name:     "Semi Automatic Side Panel Crimping Machine",
-    tagline:  "2-ton side-panel regreto crimping for wires up to 6.0 sqmm",
-    img:      "https://5.imimg.com/data5/SELLER/Default/2026/1/578502784/EU/VH/XU/118138804/2-ton-semi-automatic-regreto-wire-crimping-machine-500x500.jpeg",
-    price:    "₹60,000",
-    badge:    "Best Seller",
+    slug: "ze-2t-semi-automatic-side-panel-crimping-machine",
+    series: "ZE-2T Series",
+    name: "Semi Automatic Side Panel Crimping Machine",
+    tagline: "2-ton side-panel regreto crimping for wires up to 6.0 sqmm",
+    img: "https://5.imimg.com/data5/SELLER/Default/2026/1/578502784/EU/VH/XU/118138804/2-ton-semi-automatic-regreto-wire-crimping-machine-500x500.jpeg",
+    price: "₹60,000",
+    badge: "Best Seller",
   },
   {
-    slug:     "ze-6mm-semi-automatic-wire-cutting-stripping-machine",
-    series:   "ZE-6mm Series",
-    name:     "Wire Cutting & Stripping Machine",
-    tagline:  "Precision wire cutting and insulation stripping for 0.1–6mm² wire",
-    img:      "https://5.imimg.com/data5/SELLER/Default/2026/6/614518552/RT/CI/WT/118138804/ze-6mm-semi-automatic-wire-cutting-stripping-machine-500x500.png",
-    price:    "₹85,000",
-    badge:    "Popular",
+    slug: "ze-6mm-semi-automatic-wire-cutting-stripping-machine",
+    series: "ZE-6mm Series",
+    name: "Wire Cutting & Stripping Machine",
+    tagline: "Precision wire cutting and insulation stripping for 0.1–6mm² wire",
+    img: "https://5.imimg.com/data5/SELLER/Default/2026/6/614518552/RT/CI/WT/118138804/ze-6mm-semi-automatic-wire-cutting-stripping-machine-500x500.png",
+    price: "₹85,000",
+    badge: "Popular",
   },
   {
-    slug:     "ze-038-scrap-wire-stripping-machine",
-    series:   "ZE-038 Series",
-    name:     "Scrap Wire Stripping Machine",
-    tagline:  "Recover copper from scrap wire up to 38mm — compact and efficient",
-    img:      "https://5.imimg.com/data5/SELLER/Default/2026/5/607998252/BR/QZ/XF/118138804/ze-038-scrap-wire-machine-500x500.png",
-    price:    "₹55,000",
-    badge:    "New",
+    slug: "ze-038-scrap-wire-stripping-machine",
+    series: "ZE-038 Series",
+    name: "Scrap Wire Stripping Machine",
+    tagline: "Recover copper from scrap wire up to 38mm — compact and efficient",
+    img: "https://5.imimg.com/data5/SELLER/Default/2026/5/607998252/BR/QZ/XF/118138804/ze-038-scrap-wire-machine-500x500.png",
+    price: "₹55,000",
+    badge: "New",
   },
 ]
 
 // ─── Trust badges ─────────────────────────────────────────────────────────
 const TRUST_BADGES = [
-  { icon: Award,        label: "15+ Years" },
-  { icon: Truck,        label: "Pan India" },
-  { icon: ShieldCheck,  label: "Quality Tested" },
-  { icon: Headset,      label: "Expert Support" },
-  { icon: BadgeCheck,   label: "GST Verified" },
+  { icon: Award, label: "15+ Years" },
+  { icon: Truck, label: "Pan India" },
+  { icon: ShieldCheck, label: "Quality Tested" },
+  { icon: Headset, label: "Expert Support" },
+  { icon: BadgeCheck, label: "GST Verified" },
 ]
 
 // ─── Animation variants ───────────────────────────────────────────────────
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  show:   { opacity: 1, y: 0,  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
 const stagger = {
   hidden: {},
-  show:   { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
+  show: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
 }
 
 const heroImageAnim = {
-  initial:   { opacity: 0, scale: 1.04 },
-  animate:   { opacity: 1, scale: 1,   transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-  exit:      { opacity: 0, scale: 0.96, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
+  initial: { opacity: 0, scale: 1.04 },
+  animate: { opacity: 1, scale: 1, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  exit: { opacity: 0, scale: 0.96, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
 }
 
 export default function Hero() {
@@ -97,7 +97,7 @@ export default function Hero() {
           className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
           style={{
             backgroundImage: "radial-gradient(#0F172A 1px, transparent 1px)",
-            backgroundSize:  "28px 28px",
+            backgroundSize: "28px 28px",
           }}
         />
       </div>
@@ -125,11 +125,11 @@ export default function Hero() {
               variants={fadeIn}
               className="font-display mt-5 text-4xl font-bold leading-[1.12] text-[#0F172A] dark:text-white lg:text-[3.25rem]"
             >
-              Industrial wire cutting stripping{" "}
+              Industrial Wire Cutting Stripping{" "}
               <span className="text-[#0D5C3A] dark:text-emerald-400">
-                crimping &amp; Shouldring’s
+                Crimping &amp; Shoulder Machines
               </span>{" "}
-              machinery
+              Machinery
             </motion.h1>
 
             {/* Sub-description */}
@@ -281,11 +281,10 @@ export default function Hero() {
                     key={p.slug}
                     onClick={() => setActiveIdx(i)}
                     aria-label={`View ${p.name}`}
-                    className={`rounded-full transition-all duration-300 ${
-                      i === activeIdx
-                        ? "w-6 h-2 bg-[#0D5C3A] dark:bg-emerald-400"
-                        : "w-2 h-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600"
-                    }`}
+                    className={`rounded-full transition-all duration-300 ${i === activeIdx
+                      ? "w-6 h-2 bg-[#0D5C3A] dark:bg-emerald-400"
+                      : "w-2 h-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600"
+                      }`}
                   />
                 ))}
               </div>
@@ -297,24 +296,21 @@ export default function Hero() {
                 <button
                   key={p.slug}
                   onClick={() => setActiveIdx(i)}
-                  className={`group rounded-xl border p-2.5 text-left transition-all duration-200 ${
-                    i === activeIdx
-                      ? "border-[#10B981]/60 bg-[#ECFDF5] dark:border-emerald-700/60 dark:bg-emerald-950/30"
-                      : "border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#10B981]/40 dark:hover:border-emerald-700/40"
-                  }`}
+                  className={`group rounded-xl border p-2.5 text-left transition-all duration-200 ${i === activeIdx
+                    ? "border-[#10B981]/60 bg-[#ECFDF5] dark:border-emerald-700/60 dark:bg-emerald-950/30"
+                    : "border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#10B981]/40 dark:hover:border-emerald-700/40"
+                    }`}
                 >
-                  <p className={`text-[10px] font-bold leading-snug transition-colors ${
-                    i === activeIdx
-                      ? "text-[#0D5C3A] dark:text-emerald-400"
-                      : "text-[#475569] dark:text-slate-400 group-hover:text-[#0D5C3A] dark:group-hover:text-emerald-400"
-                  }`}>
+                  <p className={`text-[10px] font-bold leading-snug transition-colors ${i === activeIdx
+                    ? "text-[#0D5C3A] dark:text-emerald-400"
+                    : "text-[#475569] dark:text-slate-400 group-hover:text-[#0D5C3A] dark:group-hover:text-emerald-400"
+                    }`}>
                     {p.series}
                   </p>
-                  <p className={`mt-0.5 text-[10px] font-semibold leading-snug transition-colors ${
-                    i === activeIdx
-                      ? "text-[#0D5C3A] dark:text-emerald-300"
-                      : "text-[#94A3B8] dark:text-slate-500"
-                  }`}>
+                  <p className={`mt-0.5 text-[10px] font-semibold leading-snug transition-colors ${i === activeIdx
+                    ? "text-[#0D5C3A] dark:text-emerald-300"
+                    : "text-[#94A3B8] dark:text-slate-500"
+                    }`}>
                     {p.price}
                   </p>
                 </button>
