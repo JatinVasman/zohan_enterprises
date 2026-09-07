@@ -51,7 +51,11 @@ export default async function handler(req, res) {
 
   if (error) {
     console.error("[enquiry] Resend error:", error.name, "-", error.message)
-    return res.status(400).json({ ok: false, error: "Failed to send. Please try again or call us directly." })
+    return res.status(400).json({
+      ok: false,
+      error: `Failed to send. Please try again or call us directly.`,
+      _debug: `${error.name}: ${error.message}`,
+    })
   }
 
   return res.status(200).json({ ok: true })
