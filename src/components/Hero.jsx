@@ -127,9 +127,8 @@ export default function Hero() {
             >
               Industrial Wire Cutting Stripping{" "}
               <span className="text-[#0D5C3A] dark:text-emerald-400">
-                Crimping &amp; Shoulder Machines
+                Crimping &amp; Soldering Machinery
               </span>{" "}
-              Machinery
             </motion.h1>
 
             {/* Sub-description */}
@@ -138,7 +137,7 @@ export default function Hero() {
               className="mt-5 max-w-lg text-[17px] leading-relaxed text-[#475569] dark:text-slate-300"
             >
               {company.name} is a GST-registered trader and importer of precision
-              wire processing machinery — supplying manufacturers across India since{" "}
+              wire harness processing machinery — supplying manufacturers across India since{" "}
               {company.founded}.
             </motion.p>
 
