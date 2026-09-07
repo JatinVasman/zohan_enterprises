@@ -1,11 +1,10 @@
 const STORAGE_KEY = "ze_enquiries"
-const W3F_ENDPOINT = "https://api.web3forms.com/submit"
 
 /**
  * Submit an enquiry.
  *
  * Always writes to localStorage first as a backup.
- * Then attempts Web3Forms submission if the access key is configured.
+ * Then POSTs to /api/enquiry (Vercel serverless → Resend).
  *
  * @param {Object} data  — all visible form fields + hidden product/page fields
  * @returns {{ ok: boolean, error?: string }}
@@ -21,50 +20,33 @@ export async function submitEnquiry(data) {
     // localStorage unavailable — continue anyway
   }
 
-  // ── 2. Web3Forms submission ───────────────────────────────────────────────
-  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-  if (!accessKey) {
-    // Key not configured — treat as success for development / demo
-    return { ok: true, fallback: true }
-  }
-
+  // ── 2. Email via /api/enquiry serverless function ─────────────────────────
   try {
-    const res = await fetch(W3F_ENDPOINT, {
+    const res = await fetch("/api/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        access_key: accessKey,
-        // Visible fields
-        name:    data.name    || "",
-        phone:   data.phone   || "",
-        email:   data.email   || "",
-        company: data.company || "",
-        message: data.message || "",
-        // Hidden / contextual fields
+        name:            data.name            || "",
+        phone:           data.phone           || "",
+        email:           data.email           || "",
+        company:         data.company         || "",
+        message:         data.message         || "",
         productName:     data.productName     || "",
         productPrice:    data.productPrice    || "",
         productCategory: data.productCategory || "",
         productSlug:     data.productSlug     || "",
         pageUrl:         data.pageUrl         || window.location.href,
-        // Web3Forms config
-        subject:         buildSubject(data),
-        from_name:       "Zohan Enterprises Website",
       }),
     })
 
     const json = await res.json()
-    if (json.success) return { ok: true }
+    if (json.ok) return { ok: true }
 
-    return { ok: false, error: json.message || "Submission failed. Please try again or call us directly." }
-  } catch (err) {
+    return { ok: false, error: json.error || "Submission failed. Please try again or call us directly." }
+  } catch {
     return {
       ok: false,
       error: "Network error. Your enquiry has been saved locally — please call us or try again shortly.",
     }
   }
-}
-
-function buildSubject(data) {
-  if (data.productName) return `Product Enquiry: ${data.productName} — ${data.name || "Website Visitor"}`
-  return `General Enquiry from ${data.name || "Website Visitor"}`
 }
