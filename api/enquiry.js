@@ -8,13 +8,15 @@ export default async function handler(req, res) {
   }
 
   const apiKey = process.env.RESEND_API_KEY
-  const fromEmail = process.env.RESEND_FROM_EMAIL
 
   // No key configured — graceful fallback for local dev / demo
-  if (!apiKey || !fromEmail) {
-    console.warn("[enquiry] RESEND_API_KEY or RESEND_FROM_EMAIL not set — skipping email send")
+  if (!apiKey) {
+    console.warn("[enquiry] RESEND_API_KEY not set — skipping email send")
     return res.status(200).json({ ok: true, fallback: true })
   }
+
+  // Use override domain if set; fall back to Resend's shared sender (no domain verification needed)
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"
 
   const {
     name,
@@ -48,7 +50,7 @@ export default async function handler(req, res) {
   })
 
   if (error) {
-    console.error("[enquiry] Resend error:", error.message)
+    console.error("[enquiry] Resend error:", error.name, "-", error.message)
     return res.status(400).json({ ok: false, error: "Failed to send. Please try again or call us directly." })
   }
 
