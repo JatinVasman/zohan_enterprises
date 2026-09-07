@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow post-conversion and utility pages (noindex via meta robots is the primary directive)
+Disallow: /thank-you
+Disallow: /products?*
+
+# Sitemap index
+Sitemap: https://zohanenterprises.com/sitemap.xml

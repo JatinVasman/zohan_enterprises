@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-navy-900: #0F172A;
+  --color-navy-800: #0F172A;
+  --color-navy-700: #1E293B;
+  --color-blue-700: #0D5C3A;
+  --color-blue-600: #0D5C3A;
+  --color-blue-500: #10B981;
+  --color-blue-100: #D1FAE5;
+  --color-blue-50: #ECFDF5;
+  --color-orange-700: #0a472c;
+  --color-orange-600: #0a472c;
+  --color-orange-500: #0D5C3A;
+  --color-orange-400: #10B981;
+  --color-orange-200: #A7F3D0;
+  --color-orange-100: #ECFDF5;
+  --color-orange-50: #ECFDF5;
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+}
+
+:root {
+  --d01-bg: #F8FAF9;
+  --d01-surface: #FFFFFF;
+  --d01-primary: #0D5C3A;
+  --d01-accent: #10B981;
+  --d01-text: #0F172A;
+  --d01-muted: #475569;
+  --d01-border: #E2E8F0;
+  --d01-secondary-card: #F8FAFC;
+  --d01-top-bar: #0F172A;
+  --d01-pill-bg: #ECFDF5;
+  --d01-pill-border: #A7F3D0;
+
+  /* Motion System */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 300ms;
+  --duration-smooth: 500ms;
+  --duration-slow: 700ms;
+
+  /* Layout */
+  --nav-height: 72px;
+
+  /* Radius scale */
+  --radius-pill: 9999px;
+  --radius-card: 16px;
+  --radius-chip: 8px;
+}
+
+.dark {
+  --d01-bg: #0B1120;
+  --d01-surface: #1E293B;
+  --d01-primary: #10B981;
+  --d01-accent: #34D399;
+  --d01-text: #F8FAFC;
+  --d01-muted: #94A3B8;
+  --d01-border: #334155;
+  --d01-secondary-card: #0F172A;
+  --d01-top-bar: #080D1A;
+  --d01-pill-bg: rgba(16, 185, 129, 0.12);
+  --d01-pill-border: rgba(16, 185, 129, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: #F8FAF9;
+  color: #475569;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.dark body {
+  background-color: #0B1120;
+  color: #94A3B8;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Premium Restrained Shadows */
+.shadow-card {
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+}
+
+.dark .shadow-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.07), 0 4px 12px -2px rgba(13, 92, 58, 0.05);
+}
+
+.dark .shadow-card-hover {
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.5), 0 4px 14px -2px rgba(16, 185, 129, 0.12);
+}
+
+.shadow-cta {
+  box-shadow: 0 4px 14px rgba(13, 92, 58, 0.22);
+}
+
+.shadow-cta:hover {
+  box-shadow: 0 6px 20px rgba(13, 92, 58, 0.32);
+}
+
+.shadow-modal {
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.18), 0 4px 16px -2px rgba(15, 23, 42, 0.06);
+}
+
+/* Floating Pill Nav shadow */
+.shadow-pill-nav {
+  box-shadow: 0 8px 32px -4px rgba(15, 23, 42, 0.12), 0 2px 8px -1px rgba(15, 23, 42, 0.06);
+}
+.dark .shadow-pill-nav {
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6), 0 2px 8px -1px rgba(0, 0, 0, 0.4);
+}
+
+/* Micro-Interaction Utilities */
+.btn-lift {
+  transition: transform 200ms var(--ease-premium), box-shadow 200ms var(--ease-premium), background-color 200ms ease, border-color 200ms ease;
+  will-change: transform;
+}
+
+.btn-lift:hover {
+  transform: translateY(-2px);
+}
+
+.btn-lift:active {
+  transform: translateY(0);
+}
+
+.card-lift {
+  transition: transform 250ms var(--ease-premium), box-shadow 250ms var(--ease-premium), border-color 250ms ease;
+  will-change: transform;
+}
+
+.card-lift:hover {
+  transform: translateY(-3px);
+}
+
+/* Horizontal scroll container with fade edge */
+.scroll-fade-x {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-fade-x::-webkit-scrollbar {
+  display: none;
+}
+.scroll-fade-x-wrap {
+  position: relative;
+}
+.scroll-fade-x-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3rem;
+  background: linear-gradient(to right, transparent, #F8FAF9);
+  pointer-events: none;
+  z-index: 1;
+}
+.dark .scroll-fade-x-wrap::after {
+  background: linear-gradient(to right, transparent, #0B1120);
+}
+
+/* Category filter chip */
+.cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: var(--radius-chip);
+  border: 1px solid #E2E8F0;
+  background: #fff;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: border-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.cat-chip:hover {
+  border-color: #10B981;
+  color: #0D5C3A;
+  transform: translateY(-1px);
+}
+.cat-chip.active {
+  border-color: #A7F3D0;
+  background: #ECFDF5;
+  color: #0D5C3A;
+}
+.dark .cat-chip {
+  border-color: #334155;
+  background: rgba(15, 23, 42, 0.9);
+  color: #CBD5E1;
+}
+.dark .cat-chip:hover {
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #34D399;
+}
+.dark .cat-chip.active {
+  border-color: rgba(16, 185, 129, 0.6);
+  background: rgba(16, 185, 129, 0.12);
+  color: #6EE7B7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+  .btn-lift:hover, .card-lift:hover {
+    transform: none !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #10B981;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0D5C3A;
+}
