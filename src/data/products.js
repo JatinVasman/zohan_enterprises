@@ -402,7 +402,8 @@ export const allProducts = [
     phase: "3 Phase",
     capacity: "2 Ton",
     countryOfOrigin: "Made in India",
-    isBestSeller: false,
+    isBestSeller: true,
+    bestSellerOrder: 1,
   },
 
   {

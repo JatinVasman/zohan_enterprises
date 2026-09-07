@@ -37,8 +37,10 @@ export default function ProductList() {
     const arr = [...rawProducts]
     if (sort === "price-asc")  arr.sort((a, b) => extractPrice(a.price) - extractPrice(b.price))
     if (sort === "price-desc") arr.sort((a, b) => extractPrice(b.price) - extractPrice(a.price))
-    // default = best-seller first
-    if (sort === "default") arr.sort((a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0))
+    // default = best-seller first (ordered by bestSellerOrder)
+    if (sort === "default") {
+      arr.sort((a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0) || (a.bestSellerOrder || 999) - (b.bestSellerOrder || 999))
+    }
     return arr
   }, [rawProducts, sort])
 
